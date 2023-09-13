@@ -74,6 +74,29 @@
             <td> 3.5 hours </td>
         </tr>
     </table>
+    <hr>
+    <h3>
+        Code snippet to fix a number to N Digits
+    </h3>
+    <blockquote> What does O(log n) mean exactly? </blockquote>
+    <a href="https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly/2307314#2307314">quick-link to
+        the
+        source</a>
+
+    <pre>@function to-fixed($float, $digits: 2) {
+                $sass-precision: 5;
+                
+                @if $digits > $sass-precision {
+                  @warn "Sass sets default precision to #{$sass-precision} digits, and there is no way to change that for now."
+                  + "The returned number will have #{$sass-precision} digits, even if you asked for `#{$digits}`."
+                  + "See https://github.com/sass/sass/issues/1122 for further informations.";
+                }
+                
+                $pow: pow(10, $digits);
+                @return round($float * $pow) / $pow;
+              }</pre>
+
+
 
 </body>
 
